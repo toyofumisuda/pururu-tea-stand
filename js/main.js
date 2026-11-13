@@ -193,7 +193,7 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   const quality = lowSpec ? 'low' : 'high';
 
   // three-scene.js は動的に読む（読めなくてもサイトは動く）
-  const threeReady = (reduceMotion || forceStatic) ? Promise.resolve(null) : import('./three-scene.js')
+  const threeReady = (reduceMotion || forceStatic) ? Promise.resolve(null) : import('./three-scene.js?v=2')
     .then((m) => (m.webglAvailable() ? m : null))
     .catch((err) => { console.warn('[pururu] 3D を使わずに表示します:', err); return null; });
 
