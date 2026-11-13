@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ぷるる茶房 PURURU TEA STAND｜手作りタピオカと国産茶葉のティースタンド</title>
+  <meta name="description" content="もちもち、ぷるぷる、毎日のごほうび。渋谷の小さなティースタンド「ぷるる茶房」。毎朝お店で炊きあげる手作りタピオカと、国産茶葉のティードリンクをテイクアウトで。※Web制作の見本として作成した架空の店舗サイトです。">
+  <meta name="theme-color" content="#F7EFE4">
+
+  <!-- OGP（公開URLが決まったら og:url と og:image の URL を差し替える） -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ぷるる茶房 PURURU TEA STAND">
+  <meta property="og:title" content="ぷるる茶房 PURURU TEA STAND｜もちもち、ぷるぷる、毎日のごほうび。">
+  <meta property="og:description" content="毎朝炊きあげる手作りタピオカと、国産茶葉のティードリンク。渋谷のテイクアウト専門ティースタンド（Web制作の見本サイト）。">
+  <meta property="og:url" content="https://toyofumisuda.github.io/pururu-tea-stand/">
+  <meta property="og:image" content="https://toyofumisuda.github.io/pururu-tea-stand/img/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,600&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#concept">本文へスキップ</a>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a class="logo" href="#top" aria-label="ぷるる茶房 トップへ">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="20" fill="#D9A3A1"/>
+          <path d="M12 14h16l-1.6 16.2a2.4 2.4 0 0 1-2.4 2.2h-8a2.4 2.4 0 0 1-2.4-2.2Z" fill="#FBF6EE"/>
+          <path d="M12.6 20h14.8l-1 10.2a2.4 2.4 0 0 1-2.4 2.2h-8a2.4 2.4 0 0 1-2.4-2.2Z" fill="#C9A47E"/>
+          <circle cx="17" cy="29" r="1.6" fill="#3D2A21"/><circle cx="20.5" cy="30" r="1.6" fill="#3D2A21"/><circle cx="23.6" cy="28.6" r="1.6" fill="#3D2A21"/>
+          <path d="M21 14 23.5 6" stroke="#3D2A21" stroke-width="2.6" stroke-linecap="round"/>
+          <rect x="10.5" y="12" width="19" height="3" rx="1.5" fill="#FBF6EE"/>
+        </svg>
+        <span class="logo__text"><span class="logo__ja">ぷるる茶房</span><span class="logo__en">PURURU TEA STAND</span></span>
+      </a>
+
+      <nav class="gnav" id="gnav" aria-label="メインメニュー">
+        <ul class="gnav__list">
+          <li><a href="#concept">こだわり</a></li>
+          <li><a href="#menu">メニュー</a></li>
+          <li><a href="#custom">カスタマイズ</a></li>
+          <li><a href="#gallery">ギャラリー</a></li>
+          <li><a href="#shop">店舗情報</a></li>
+          <li class="gnav__cta"><a class="btn btn--pink btn--sm" href="#contact">お問い合わせ</a></li>
+        </ul>
+        <p class="gnav__note">※ Web制作の見本として作成した架空の店舗です</p>
+      </nav>
+
+      <button class="burger" id="burger" type="button" aria-controls="gnav" aria-expanded="false" aria-label="メニューを開く">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== 1. Hero（スクロールで味が変わる3Dドリンク） ===== -->
+    <section class="hero" id="hero" data-flavor="milk" data-seg="0" aria-label="ぷるる茶房のドリンク紹介">
+      <div class="hero__sticky">
+        <div class="hero__bg" aria-hidden="true">
+          <span class="blob blob--a"></span><span class="blob blob--b"></span><span class="blob blob--c"></span>
+        </div>
+
+        <div class="hero__stage" id="heroStage">
+          <div class="drink-fallback hero__fallback" id="heroFallback" role="img" aria-label="タピオカミルクティーのイラスト">
+            <img src="img/drink.svg" alt="" width="200" height="300">
+          </div>
+        </div>
+
+        <!-- 区間0：イントロ（ミルクティー） -->
+        <div class="hero__layer hero__layer--intro is-active" data-seg="0">
+          <div class="hero__copy">
+            <p class="hero__eyebrow">Handmade Tapioca &amp; Japanese Tea</p>
+            <h1 class="hero__title">もちもち、<br>ぷるぷる、<br>毎日のごほうび。</h1>
+            <p class="hero__lead">毎朝お店で炊きあげる手作りタピオカと、<br class="pc">国産茶葉でていねいに淹れたお茶。<br>渋谷の小さなティースタンドです。</p>
+            <div class="hero__actions">
+              <a class="btn btn--brown" href="#menu">メニューを見る<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a class="btn btn--ghost" href="#shop">店舗情報</a>
+            </div>
+            <p class="hero__now"><span class="hero__now-dot"></span>01 Milk Tea ─ ぷるるミルクティー</p>
+          </div>
+        </div>
+
+        <!-- 区間1〜3：味ごとの説明 -->
+        <div class="hero__layer hero__layer--right" data-seg="1">
+          <div class="flavor-cap">
+            <p class="flavor-cap__no">02 / <em>Matcha</em></p>
+            <h2 class="flavor-cap__name">濃い抹茶ミルク</h2>
+            <p class="flavor-cap__text">国産の抹茶をたっぷり点てて。<br>ほろ苦さと、ミルクのやさしい甘さ。</p>
+            <p class="flavor-cap__price">¥620<small>（税込）</small></p>
+          </div>
+        </div>
+        <div class="hero__layer hero__layer--left" data-seg="2">
+          <div class="flavor-cap">
+            <p class="flavor-cap__no">03 / <em>Strawberry</em></p>
+            <h2 class="flavor-cap__name">まるごと苺ミルク</h2>
+            <p class="flavor-cap__text">果肉ごと煮込んだ苺ソースに、<br>まろやかなミルクを重ねて。</p>
+            <p class="flavor-cap__price">¥680<small>（税込）</small></p>
+          </div>
+        </div>
+        <div class="hero__layer hero__layer--right" data-seg="3">
+          <div class="flavor-cap">
+            <p class="flavor-cap__no">04 / <em>Brown Sugar</em></p>
+            <h2 class="flavor-cap__name">黒糖タイガーミルク</h2>
+            <p class="flavor-cap__text">じっくり煮詰めた黒糖蜜が、<br>カップに虎もようを描きます。</p>
+            <p class="flavor-cap__price">¥650<small>（税込）</small></p>
+          </div>
+        </div>
+
+        <ol class="hero__dots" aria-label="味の切り替え">
+          <li><button type="button" data-go="0" class="is-active" aria-label="ミルクティー"><span>Milk Tea</span></button></li>
+          <li><button type="button" data-go="1" aria-label="抹茶"><span>Matcha</span></button></li>
+          <li><button type="button" data-go="2" aria-label="苺ミルク"><span>Strawberry</span></button></li>
+          <li><button type="button" data-go="3" aria-label="黒糖"><span>Brown Sugar</span></button></li>
+        </ol>
+
+        <p class="hero__scroll" aria-hidden="true"><span>Scroll</span></p>
+      </div>
+    </section>
+
+    <!-- ===== 2. こだわり ===== -->
+    <section class="section section--cream" id="concept">
+      <div class="container">
+        <header class="sec-head reveal">
+          <p class="sec-head__en">Our Promise</p>
+          <h2 class="sec-head__title">ぷるるの、3つのこだわり。</h2>
+          <p class="sec-head__lead">毎日飲みたくなるのは、毎日ていねいに作っているから。</p>
+        </header>
+
+        <div class="promise">
+          <article class="promise__card reveal">
+            <div class="promise__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><circle cx="22" cy="38" r="11" fill="#3D2A21"/><circle cx="40" cy="30" r="11" fill="#5A3E30"/><circle cx="36" cy="46" r="9" fill="#2B1C15"/><circle cx="18" cy="34" r="3" fill="#fff" opacity=".55"/><circle cx="36" cy="26" r="3" fill="#fff" opacity=".55"/><circle cx="33" cy="43" r="2.4" fill="#fff" opacity=".5"/><path d="M46 10c2 3 2 6 0 9M52 12c2 3 2 6 0 9" stroke="#D9A3A1" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg>
+            </div>
+            <p class="promise__no">01</p>
+            <h3 class="promise__title">手作りタピオカ</h3>
+            <p class="promise__text">毎朝お店のキッチンで生地からこね、黒糖蜜でじっくり炊きあげます。炊きあがりから4時間以内のものだけを使うから、いつでももちもち。</p>
+            <p class="promise__stat"><span class="num" data-count="4">4</span><span class="unit">時間以内</span><span class="label">炊きたてだけを使用</span></p>
+          </article>
+
+          <article class="promise__card reveal">
+            <div class="promise__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M14 50C10 30 24 12 52 12c2 26-14 40-38 38Z" fill="#9DB07A"/><path d="M16 48C26 38 34 30 44 20" stroke="#FBF6EE" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M26 38l-2-8M33 31l-1-8M30 34l8 1M37 27l7 1" stroke="#FBF6EE" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <p class="promise__no">02</p>
+            <h3 class="promise__title">国産茶葉</h3>
+            <p class="promise__text">紅茶・緑茶・ほうじ茶は、国内の茶園から届く茶葉だけを使用。注文ごとに淹れるので、香りがちがいます。</p>
+            <p class="promise__stat"><span class="num" data-count="100">100</span><span class="unit">%</span><span class="label">国産茶葉</span></p>
+          </article>
+
+          <article class="promise__card reveal">
+            <div class="promise__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><rect x="8" y="18" width="48" height="8" rx="4" fill="#E3CDB2"/><rect x="8" y="18" width="30" height="8" rx="4" fill="#D9A3A1"/><circle cx="38" cy="22" r="8" fill="#fff" stroke="#C27E7C" stroke-width="3"/><rect x="12" y="36" width="14" height="14" rx="4" fill="#DCEFF5" stroke="#9CC3D1" stroke-width="2"/><rect x="30" y="38" width="12" height="12" rx="4" fill="#DCEFF5" stroke="#9CC3D1" stroke-width="2"/><path d="M48 38l2 4 4 2-4 2-2 4-2-4-4-2 4-2Z" fill="#C9A47E"/></svg>
+            </div>
+            <p class="promise__no">03</p>
+            <h3 class="promise__title">甘さ・氷を選べる</h3>
+            <p class="promise__text">甘さは0〜120%の6段階、氷は4段階から。その日の気分にあわせて、あなたの「ちょうどいい」を見つけてください。</p>
+            <p class="promise__stat"><span class="num" data-count="24">24</span><span class="unit">通り</span><span class="label">甘さ×氷の組み合わせ</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. メニュー ===== -->
+    <section class="section section--milk" id="menu">
+      <div class="container">
+        <header class="sec-head reveal">
+          <p class="sec-head__en">Menu</p>
+          <h2 class="sec-head__title">今日は、どれにする？</h2>
+          <p class="sec-head__lead">すべてのドリンクに、手作りタピオカが入っています。<br class="pc">価格はすべて税込・Mサイズ（500ml）です。</p>
+        </header>
+
+        <div class="tabs reveal" role="tablist" aria-label="メニューのカテゴリ">
+          <button class="tab is-active" type="button" role="tab" id="tab-milk" aria-controls="menuGrid" aria-selected="true" data-cat="milk">ミルクティー</button>
+          <button class="tab" type="button" role="tab" id="tab-fruit" aria-controls="menuGrid" aria-selected="false" data-cat="fruit" tabindex="-1">フルーツティー</button>
+          <button class="tab" type="button" role="tab" id="tab-season" aria-controls="menuGrid" aria-selected="false" data-cat="season" tabindex="-1">季節限定</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid" role="tabpanel" aria-labelledby="tab-milk" tabindex="0">
+          <!-- main.js がメニューのデータからカードを作る -->
+        </div>
+        <noscript><p class="note">メニューの表示には JavaScript を有効にしてください。</p></noscript>
+      </div>
+    </section>
+
+    <!-- ===== 4. カスタマイズ ===== -->
+    <section class="section section--dark" id="custom">
+      <div class="container">
+        <header class="sec-head sec-head--light reveal">
+          <p class="sec-head__en">Make Your Cup</p>
+          <h2 class="sec-head__title">わたしだけの、1杯を。</h2>
+          <p class="sec-head__lead">甘さ・氷・トッピングを選ぶと、カップと合計金額がその場で変わります。</p>
+        </header>
+
+        <div class="custom">
+          <div class="custom__stage" id="customStage">
+            <div class="drink-fallback custom__fallback" id="customFallback" role="img" aria-label="カスタマイズ中のドリンクのイラスト"></div>
+            <p class="custom__hint" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 12h8M5 9l-3 3 3 3M19 9l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>ドラッグで回せます</p>
+          </div>
+
+          <form class="custom__panel" id="customForm" aria-label="ドリンクのカスタマイズ">
+            <fieldset class="opt">
+              <legend class="opt__title"><span class="opt__no">1</span>ベースのドリンク</legend>
+              <div class="chips" id="baseChips"><!-- main.js --></div>
+            </fieldset>
+
+            <fieldset class="opt">
+              <legend class="opt__title"><span class="opt__no">2</span>甘さ <output class="opt__value" id="sweetOut" for="sweet">100%</output></legend>
+              <input class="range" type="range" id="sweet" name="sweet" min="0" max="5" step="1" value="4" aria-valuetext="100%">
+              <div class="range__ticks" aria-hidden="true"><span>0%</span><span>30%</span><span>50%</span><span>70%</span><span>100%</span><span>120%</span></div>
+            </fieldset>
+
+            <fieldset class="opt">
+              <legend class="opt__title"><span class="opt__no">3</span>氷</legend>
+              <div class="seg">
+                <label class="seg__opt"><input type="radio" name="ice" value="0"><span>なし</span></label>
+                <label class="seg__opt"><input type="radio" name="ice" value="1"><span>少なめ</span></label>
+                <label class="seg__opt"><input type="radio" name="ice" value="2" checked><span>ふつう</span></label>
+                <label class="seg__opt"><input type="radio" name="ice" value="3"><span>多め</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="opt">
+              <legend class="opt__title"><span class="opt__no">4</span>トッピング</legend>
+              <div class="toppings">
+                <label class="topping"><input type="checkbox" name="top" value="pearl"><span class="topping__body"><span class="topping__name">タピオカ増量</span><span class="topping__price">+¥100</span></span></label>
+                <label class="topping"><input type="checkbox" name="top" value="foam"><span class="topping__body"><span class="topping__name">チーズフォーム</span><span class="topping__price">+¥150</span></span></label>
+                <label class="topping"><input type="checkbox" name="top" value="nata"><span class="topping__body"><span class="topping__name">ナタデココ</span><span class="topping__price">+¥100</span></span></label>
+              </div>
+            </fieldset>
+
+            <div class="total" aria-live="polite">
+              <div>
+                <p class="total__label">合計（税込）</p>
+                <p class="total__summary" id="summary">ぷるるミルクティー／甘さ100%／氷ふつう</p>
+              </div>
+              <p class="total__price"><span class="yen">¥</span><span id="totalPrice">560</span></p>
+            </div>
+            <p class="custom__note">※ 店頭でこの画面を見せると、同じ内容でお作りします（という想定の見本です）。</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. ギャラリー（Instagram風） ===== -->
+    <section class="section section--cream" id="gallery">
+      <div class="container container--narrow">
+        <header class="sec-head reveal">
+          <p class="sec-head__en">Gallery</p>
+          <h2 class="sec-head__title">#ぷるるのある毎日</h2>
+          <p class="sec-head__lead">新作やその日のタピオカの様子は、SNSでお知らせしています。</p>
+        </header>
+
+        <div class="ig reveal">
+          <div class="ig__profile">
+            <svg class="ig__avatar" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#D9A3A1"/><path d="M12 14h16l-1.6 16.2a2.4 2.4 0 0 1-2.4 2.2h-8a2.4 2.4 0 0 1-2.4-2.2Z" fill="#FBF6EE"/><path d="M12.6 20h14.8l-1 10.2a2.4 2.4 0 0 1-2.4 2.2h-8a2.4 2.4 0 0 1-2.4-2.2Z" fill="#C9A47E"/><circle cx="17" cy="29" r="1.6" fill="#3D2A21"/><circle cx="20.5" cy="30" r="1.6" fill="#3D2A21"/><circle cx="23.6" cy="28.6" r="1.6" fill="#3D2A21"/><path d="M21 14 23.5 6" stroke="#3D2A21" stroke-width="2.6" stroke-linecap="round"/><rect x="10.5" y="12" width="19" height="3" rx="1.5" fill="#FBF6EE"/></svg>
+            <div class="ig__meta">
+              <p class="ig__handle">pururu_teastand</p>
+              <ul class="ig__stats">
+                <li><b>248</b> 投稿</li>
+                <li><b>12.4k</b> フォロワー</li>
+              </ul>
+            </div>
+            <a class="btn btn--pink btn--sm ig__follow" href="#" aria-label="SNSをフォローする（見本のためリンクは仮です）">フォローする</a>
+          </div>
+          <ul class="ig__grid" id="igGrid"><!-- main.js --></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. 店舗情報 ===== -->
+    <section class="section section--milk" id="shop">
+      <div class="container">
+        <header class="sec-head reveal">
+          <p class="sec-head__en">Shop</p>
+          <h2 class="sec-head__title">渋谷の坂の途中で、<br class="sp">待ってます。</h2>
+        </header>
+
+        <div class="shop">
+          <figure class="shop__map reveal">
+            <svg viewBox="0 0 600 420" role="img" aria-labelledby="mapTitle">
+              <title id="mapTitle">駅から店舗までの簡単な地図。駅の南口を出て、ぷるる通りを北東へ歩き、茶房坂を上った右手に店舗があります。</title>
+              <rect width="600" height="420" rx="28" fill="#F6ECDF"/>
+              <!-- 街区 -->
+              <g fill="#EADBC6">
+                <rect x="30" y="30" width="150" height="110" rx="14"/><rect x="200" y="30" width="140" height="70" rx="14"/>
+                <rect x="360" y="30" width="210" height="120" rx="14"/><rect x="30" y="250" width="120" height="140" rx="14"/>
+                <rect x="410" y="270" width="160" height="120" rx="14"/><rect x="250" y="320" width="140" height="70" rx="14"/>
+              </g>
+              <!-- 公園 -->
+              <rect x="200" y="120" width="140" height="80" rx="22" fill="#D7E2C0"/>
+              <circle cx="235" cy="155" r="14" fill="#B9CC8A"/><circle cx="262" cy="170" r="11" fill="#B9CC8A"/><circle cx="300" cy="150" r="13" fill="#B9CC8A"/>
+              <text x="270" y="190" text-anchor="middle" font-size="13" fill="#6E8B42" font-family="Zen Maru Gothic, sans-serif">さくら公園</text>
+              <!-- 道路 -->
+              <g stroke="#fff" stroke-linecap="round" fill="none">
+                <path d="M0 225 H600" stroke-width="26"/>
+                <path d="M190 0 V420" stroke-width="18"/>
+                <path d="M350 0 V250 Q350 262 362 262 H600" stroke-width="16"/>
+                <path d="M160 420 L400 230" stroke-width="12"/>
+              </g>
+              <text x="470" y="219" font-size="12" fill="#A88B74" font-family="Zen Maru Gothic, sans-serif">ぷるる通り</text>
+              <text x="372" y="96" font-size="12" fill="#A88B74" font-family="Zen Maru Gothic, sans-serif" transform="rotate(90 372 96)">茶房坂</text>
+              <!-- 線路 -->
+              <path d="M0 300 C120 290 140 300 190 300" stroke="#8A7263" stroke-width="7" fill="none"/>
+              <path d="M0 300 C120 290 140 300 190 300" stroke="#F6ECDF" stroke-width="3" stroke-dasharray="10 10" fill="none"/>
+              <!-- 駅 -->
+              <rect x="40" y="198" width="120" height="44" rx="12" fill="#7A5038"/>
+              <text x="100" y="226" text-anchor="middle" font-size="15" font-weight="700" fill="#FBF6EE" font-family="Zen Maru Gothic, sans-serif">渋谷駅</text>
+              <!-- ルート -->
+              <path d="M160 220 H350 V150" stroke="#C27E7C" stroke-width="4" stroke-dasharray="2 9" stroke-linecap="round" fill="none"/>
+              <!-- 店舗ピン -->
+              <g transform="translate(350 120)">
+                <ellipse cx="0" cy="34" rx="14" ry="4" fill="#3D2A21" opacity=".18"/>
+                <path d="M0 32C-14 14-20 6-20-4a20 20 0 0 1 40 0C20 6 14 14 0 32Z" fill="#D9A3A1" stroke="#fff" stroke-width="3"/>
+                <circle cx="0" cy="-4" r="8" fill="#fff"/>
+              </g>
+              <g transform="translate(386 92)">
+                <rect width="150" height="40" rx="20" fill="#3D2A21"/>
+                <text x="75" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#FBF6EE" font-family="Zen Maru Gothic, sans-serif">ぷるる茶房</text>
+              </g>
+              <g transform="translate(232 246)">
+                <rect width="96" height="30" rx="15" fill="#fff" stroke="#C27E7C" stroke-width="2"/>
+                <text x="48" y="20" text-anchor="middle" font-size="13" fill="#C27E7C" font-family="Zen Maru Gothic, sans-serif">徒歩 約7分</text>
+              </g>
+              <!-- 方位 -->
+              <g transform="translate(548 362)"><circle r="20" fill="#fff"/><path d="M0-12 6 6 0 2-6 6Z" fill="#7A5038"/><text y="-24" text-anchor="middle" font-size="11" fill="#8A7263" font-family="Fraunces, serif">N</text></g>
+            </svg>
+            <figcaption>※ 架空の店舗・地図です。実在の場所とは関係ありません。</figcaption>
+          </figure>
+
+          <div class="shop__info reveal">
+            <dl class="info">
+              <div><dt>店名</dt><dd>ぷるる茶房（PURURU TEA STAND）</dd></div>
+              <div><dt>住所</dt><dd>〒150-0000 東京都渋谷区神南 9-99-1 ぷるるビル1F<span class="info__sub">※ 実在しない架空の住所です</span></dd></div>
+              <div><dt>営業時間</dt><dd>11:00〜21:00<span class="info__sub">（ラストオーダー 20:45）</span></dd></div>
+              <div><dt>定休日</dt><dd>毎週水曜日（祝日の場合は翌日）</dd></div>
+              <div><dt>アクセス</dt><dd>渋谷駅から徒歩 約7分<span class="info__sub">ぷるる通りを進み、茶房坂を上った右手</span></dd></div>
+              <div><dt>お支払い</dt><dd>現金・クレジットカード・各種QR決済</dd></div>
+              <div><dt>席</dt><dd>テイクアウト専門（店頭ベンチ2席）</dd></div>
+            </dl>
+            <div class="shop__badges">
+              <span class="pill">テイクアウト</span><span class="pill">モバイルオーダー対応</span><span class="pill">ベビーカーOK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. お問い合わせ ===== -->
+    <section class="section section--cream" id="contact">
+      <div class="container container--narrow">
+        <header class="sec-head reveal">
+          <p class="sec-head__en">Contact</p>
+          <h2 class="sec-head__title">お問い合わせ</h2>
+          <p class="sec-head__lead">ケータリング、イベント出店、取材のご相談など、お気軽にどうぞ。<br class="pc">2営業日以内にご返信します。</p>
+        </header>
+
+        <!--
+          ▼ 送信先（Formspree）
+          https://formspree.io でフォームを作り、action の「YOUR_FORM_ID」を自分のIDに書き換えるだけで使えます。
+          IDが「YOUR_FORM_ID」のままのときは、見本として送信せずに完了メッセージだけを表示します。
+        -->
+        <form class="form reveal" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="form__row">
+            <label for="f-name">お名前 <span class="req">必須</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="ぷるる 花子">
+            <p class="form__err" data-for="f-name"></p>
+          </div>
+          <div class="form__row">
+            <label for="f-email">メールアドレス <span class="req">必須</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="you@example.com">
+            <p class="form__err" data-for="f-email"></p>
+          </div>
+          <div class="form__row">
+            <label for="f-type">ご用件</label>
+            <select id="f-type" name="type">
+              <option>店舗について</option>
+              <option>ケータリング・イベント出店</option>
+              <option>取材・メディア</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label for="f-msg">お問い合わせ内容 <span class="req">必須</span></label>
+            <textarea id="f-msg" name="message" rows="5" required placeholder="ご質問やご相談の内容をご記入ください"></textarea>
+            <p class="form__err" data-for="f-msg"></p>
+          </div>
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn--brown btn--block" type="submit">送信する</button>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 8. Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <p class="footer__logo">ぷるる茶房<span>PURURU TEA STAND</span></p>
+        <p class="footer__copy">もちもち、ぷるぷる、毎日のごほうび。</p>
+      </div>
+      <ul class="sns" aria-label="SNS（見本のためリンクは仮です）">
+        <li><a href="#" aria-label="写真SNS（仮）"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg><span>Photo</span></a></li>
+        <li><a href="#" aria-label="短文SNS（仮）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Talk</span></a></li>
+        <li><a href="#" aria-label="動画SNS（仮）"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9.5v5l4.5-2.5Z" fill="currentColor"/></svg><span>Movie</span></a></li>
+      </ul>
+      <ul class="footer__nav">
+        <li><a href="#concept">こだわり</a></li><li><a href="#menu">メニュー</a></li><li><a href="#custom">カスタマイズ</a></li>
+        <li><a href="#gallery">ギャラリー</a></li><li><a href="#shop">店舗情報</a></li><li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+      <p class="footer__notice">※このサイトはWeb制作の見本として作成した架空の店舗です。<br class="sp">店名・住所・商品・価格などはすべて架空のものです。</p>
+      <p class="footer__c"><small>&copy; <span id="year">2026</span> PURURU TEA STAND (Sample)</small></p>
+    </div>
+  </footer>
+
+  <!-- ===== スマホ用の固定ボタン ===== -->
+  <nav class="bottom-bar" aria-label="クイックリンク">
+    <a class="bottom-bar__btn" href="#menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10l-1.3 15a2 2 0 0 1-2 1.8h-3.4a2 2 0 0 1-2-1.8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5.5 4h13M12.5 4l1.5-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10.5" cy="16.5" r="1.1" fill="currentColor"/><circle cx="13.5" cy="17" r="1.1" fill="currentColor"/></svg>メニュー</a>
+    <a class="bottom-bar__btn bottom-bar__btn--pink" href="#shop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.3-7-11.5a7 7 0 0 1 14 0C19 14.7 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg>アクセス</a>
+  </nav>
+</body>
+</html>
