@@ -366,6 +366,13 @@ function initHero(mqPC) {
     { x: -0.06, y: 0.33, s: 0.6 },
   ];
 
+  // 縦が短いスマホでは、カップを少し小さく・上にして文字と重ならないようにする
+  const posesNow = () => {
+    if (mqPC.matches) return POSES_PC;
+    const k = clamp((window.innerHeight - 560) / 240, 0, 1);
+    return POSES_SP.map((q) => ({ x: q.x, y: q.y + (1 - k) * 0.06, s: q.s * (0.8 + 0.2 * k) }));
+  };
+
   const progress = () => {
     const total = hero.offsetHeight - window.innerHeight;
     return clamp(-hero.getBoundingClientRect().top / Math.max(1, total), 0, 1);
@@ -389,7 +396,7 @@ function initHero(mqPC) {
     const p = progress();
     setSeg(Math.min(3, Math.floor(p * 4)));
     if (!drink) return;
-    const poses = mqPC.matches ? POSES_PC : POSES_SP;
+    const poses = posesNow();
     const f = clamp(p * 4 - 0.5, 0, 3);
     const i = Math.min(2, Math.floor(f));
     const t = smoothstep(0.25, 0.75, f - i);
@@ -413,8 +420,7 @@ function initHero(mqPC) {
     attach(scene) {
       drink = scene;
       drink.setFlavor(FLAVORS[FLAVOR_ORDER[Math.max(0, seg)]], true);
-      const poses = mqPC.matches ? POSES_PC : POSES_SP;
-      drink.setPose(poses[0], true);
+      drink.setPose(posesNow()[0], true);
       update();
       // ヒーローのカップをクリック／タップすると、ぷるん
       $('#heroStage').addEventListener('pointerdown', () => drink.bounce());
